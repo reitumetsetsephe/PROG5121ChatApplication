@@ -16,6 +16,7 @@ import java.util.Random;
 public class Messages {
     // variables for msg details 
     private static int messageCount = 0;
+    private int messageNumber;
     private String messageID;
     private String messageText;
     private String recipientCell;
@@ -34,6 +35,7 @@ public class Messages {
         this.recipientCell = recipientCell;
         this.messageText = messageText;
         messageCount++; 
+        this.messageNumber = messageCount;
         this.messageID = generateMessageID();
         this.messageHash = createMessageHash();
         this.sent = false;
@@ -63,7 +65,7 @@ public class Messages {
         String[] words = messageText.trim().split(" ");
         String first = words.length > 0 ? words[0] : "";
         String last = words.length > 1 ? words[words.length - 1] : "";
-        return messageID.substring(0, 2) + ":" + messageCount + ":" + (first + last).toUpperCase();
+        return messageID.substring(0, 2) + ":" + messageNumber + ":" + (first + last).toUpperCase();
     }
 
     // method that processes users choice to send, disregard or store msg
