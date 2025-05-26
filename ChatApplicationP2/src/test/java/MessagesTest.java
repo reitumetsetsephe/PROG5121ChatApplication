@@ -94,7 +94,7 @@ public class MessagesTest {
     public void testMessageHash_Correct() {
         Messages msg = new Messages("+27718693002", "Hi Mike, can you join us for dinner tonight");
         String[] words = "Hi Mike, can you join us for dinner tonight".trim().split(" ");
-        String expectedHash = msg.getMessageID().substring(0, 2) + ":" + currentMsgCount + ":HITONIGHT";
+        String expectedHash = msg.getMessageID().substring(0, 2) + ":1:HITONIGHT";
         assertEquals(expectedHash, msg.getMessageHash());
         
     }
