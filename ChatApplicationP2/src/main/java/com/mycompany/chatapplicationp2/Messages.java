@@ -33,12 +33,13 @@ public class Messages {
     public Messages(String recipientCell, String messageText) {
         this.recipientCell = recipientCell;
         this.messageText = messageText;
+        messageCount++; 
         this.messageID = generateMessageID();
         this.messageHash = createMessageHash();
         this.sent = false;
         this.received = false;
         this.read = false;
-        messageCount++;
+        
     }
 
     // to generate random 10 dig method as string 
